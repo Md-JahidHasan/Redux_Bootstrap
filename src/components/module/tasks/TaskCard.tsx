@@ -1,15 +1,38 @@
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
+import { cn } from "@/lib/utils";
+import type { Itask } from "@/types";
+import { Trash2 } from "lucide-react";
 
-const TaskCard = () => {
+interface Iprops {
+    task: Itask
+}
+
+const TaskCard = ({task}: Iprops) => {
     return (
-        <div>
-            <div>
-                <h1>Task Title</h1>
+      <div className=" border px-5 py-5 rounded-md">
+        <div className="flex justify-between items-center">
+          <div className="flex items-center gap-2">
+            <div
+              className={cn("  size-3 rounded-full", {
+                "bg-green-500": task.priority === "Low",
+                "bg-yellow-500": task.priority === "Medium",
+                "bg-red-500": task.priority === "High",
+              })}
+            >
+              {" "}
             </div>
-            <div>
-                <Button></Button>
-            </div>
+            <h1>{task.title}</h1>
+          </div>
+          <div className="flex gap-3 items-center">
+            <Button variant="link" className="p-0 text-red-500">
+              <Trash2></Trash2>
+            </Button>
+            <Checkbox></Checkbox>
+          </div>
         </div>
+        <p className="mt-5">{task.descripton}</p>
+      </div>
     );
 };
 

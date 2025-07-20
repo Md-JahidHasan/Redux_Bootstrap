@@ -12,18 +12,34 @@ interface InitialState{
 
 
 
-const initialState : InitialState = {
+const initialState: InitialState = {
   task: [
     {
       id: "asdasd",
-      title: "Ini sibfd",
+      title: "Init Github",
       descripton: "Create Homepage and routing",
       dueDate: "2025-11",
       isCompleted: true,
       priority: "High",
     },
+    {
+      id: "asdasd3",
+      title: "Init Redux",
+      descripton: "Create Homepage and routing",
+      dueDate: "2025-11",
+      isCompleted: true,
+      priority: "Low",
+    },
+    {
+      id: "asdasd3",
+      title: "Init Redux",
+      descripton: "Create Homepage and routing",
+      dueDate: "2025-11",
+      isCompleted: true,
+      priority: "Medium",
+    },
   ],
-  filter: "All"
+  filter: "All",
 };
 
 
