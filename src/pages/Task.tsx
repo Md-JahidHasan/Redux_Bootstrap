@@ -14,7 +14,7 @@ const Task = () => {
     console.log(filter);
     
     return (
-      <div className=" max-w-7xl mx-auto px-5 mt-20">
+      <div className=" max-w-7xl mx-auto px-5 mt-16">
         <div className="flex justify-end gap-5 ">
           <h1 className="mr-auto">Tasks</h1>
           <Tabs defaultValue="All">

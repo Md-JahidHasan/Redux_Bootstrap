@@ -1,3 +1,4 @@
+import type { RootState } from "@/redux/store";
 import type { Iuser } from "@/types";
 import { createSlice, nanoid, type PayloadAction } from "@reduxjs/toolkit"
 
@@ -7,14 +8,24 @@ interface InitialState {
 
 
 const initialState: InitialState = {
-    users: []
-}
+  users: [
+    {
+      id: "knL_2K0CocPwEawypghKh",
+      name: "Fara Alam",
+    },
+    {
+      id: "NkK2rrcu6TjQviAA0z2av",
+      name: "Md. Jahid Hasan",
+    },
+  ],
+};
 
 type DraftUser = Pick<Iuser,"name">;
 
 
 
 const createUser = (userData: DraftUser): Iuser => {
+
     return {
         id : nanoid(), ...userData
     }
@@ -37,7 +48,9 @@ const userSlice = createSlice({
 })
 
 
+export const selectUsers = (state: RootState) => state.users.users;
 
+export const { addUser, removeUser} = userSlice.actions;
 
 
 export default userSlice.reducer;
